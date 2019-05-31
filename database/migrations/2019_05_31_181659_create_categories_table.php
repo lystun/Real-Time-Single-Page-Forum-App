@@ -13,6 +13,9 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
+
+        Schema::enableForeignKeyConstraints();
+
         Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('reply_id');

@@ -13,15 +13,19 @@ class CreateRepliesTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
+
         Schema::create('replies', function (Blueprint $table) {
+
             $table->bigIncrements('id');
             $table->text('body');
 
-
-            $table->integer('question_id')->unsigned();
-            $table->integer('user_id')->unsigned();
-            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
+            $table->unsignedInteger('question_id')->nullable();
+            $table->unsignedInteger('user_id');
             $table->timestamps();
+
+            $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
+
         });
     }
 
