@@ -16,8 +16,8 @@ class CreateLikesTable extends Migration
         Schema::enableForeignKeyConstraints();
         Schema::create('likes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('slug');
+            $table->string('reply_id');
+            $table->string('user_id');
             $table->timestamps();
         });
     }
