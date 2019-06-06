@@ -10,6 +10,18 @@ use Illuminate\Support\Facades\Auth;
 class LikeController extends Controller
 {
 
+    /**
+     * Create a new AuthController instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('JWT' );
+    }
+
+
+
     public function likeIt(Reply $reply){
 
          $reply->likes()->create([
