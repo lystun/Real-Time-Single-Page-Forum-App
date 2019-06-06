@@ -2,7 +2,7 @@
 
     <v-footer class="pa-3">
 
-        <p>Lystun Real Time SPA</p>
+        <div>Lystun Real Time SPA</div>
 
         <v-spacer></v-spacer>
         <div>&copy; {{ new Date().getFullYear() }}</div>
