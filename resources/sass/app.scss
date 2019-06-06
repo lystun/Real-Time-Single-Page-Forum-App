@@ -2,11 +2,12 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Variables
-@import 'variables';
+//@import 'variables';
+//@import '~bootstrap/scss/bootstrap';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+
+// main.styl
+@import '~vuetify/dist/vuetify.min.css'; // Ensure you are using stylus-loader
 
 .navbar-laravel {
   background-color: #fff;
