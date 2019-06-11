@@ -2,7 +2,7 @@
     <v-form @submit.prevent="login">
         <v-container>
             <v-layout>
-                <v-flex md8>
+                <v-flex md12>
                     <v-text-field
                             v-model="form.email"
                             type="email"
@@ -10,7 +10,7 @@
                             required
                     ></v-text-field>
                 </v-flex>
-                <v-flex md8>
+                <v-flex md12>
                     <v-text-field
                             v-model="form.password"
                             type="password"
@@ -41,13 +41,7 @@
 
         methods : {
             login(){
-                axios.post('/api/auth/login', this.form)
-                    .then(res => {
-                        console.log(res.data)
-                    })
-                    .catch(error => {
-                        console.log(error.data)
-                    })
+                User.login(this.form)
             }
         }
     }
