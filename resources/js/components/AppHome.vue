@@ -10,7 +10,7 @@
 <script>
     import ToolBar from "./ToolBar";
     import AppFooter from "./AppFooter";
-    import Login from "./Login/Login";
+    import Login from "./login/Login";
 
     export default {
         name: "AppHome",

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SignupRequest;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,7 +11,7 @@ class AuthController extends Controller
 {
     /**
      * Create a new AuthController instance.
-     *
+      *
      * @return void
      */
     public function __construct()
@@ -18,7 +19,7 @@ class AuthController extends Controller
         $this->middleware('JWT', ['except' => ['login', 'signup']] );
     }
 
-    public function signup(Request $request){
+    public function signup(SignupRequest $request){
 
         User::create($request->all());
         return $this->login($request);
@@ -33,7 +34,7 @@ class AuthController extends Controller
     {
         $credentials = request(['email', 'password']);
 
-        if (! $token = auth()->attempt($credentials)) {
+        if (!$token = auth()->attempt($credentials)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 

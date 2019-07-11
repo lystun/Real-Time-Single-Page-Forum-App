@@ -8,6 +8,7 @@
 
 // main.styl
 @import '~vuetify/dist/vuetify.min.css'; // Ensure you are using stylus-loader
+@import '~simplemde/dist/simplemde.min.css';
 
 .navbar-laravel {
   background-color: #fff;

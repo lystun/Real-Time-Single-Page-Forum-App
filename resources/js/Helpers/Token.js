@@ -5,16 +5,16 @@ class Token {
         const payload = this.payload(token);
 
         if(payload){
-            return payload.iss == "http://realtimespforum.test/api/auth/login" ? true : false
+            return payload.iss == "http://realtimespforum.test/api/auth/login" || "http://realtimespforum.test/api/auth/signup" ? true : false
         }
 
-        return false
+        return true
     }
 
     payload(token){
 
         const payload = token.split('.')[1];
-        return (this.decode(payload));
+        return this.decode(payload);
     }
 
     decode(payload){
